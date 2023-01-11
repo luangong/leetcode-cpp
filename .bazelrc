@@ -1,0 +1,23 @@
+# LeetCode uses the C++17 standard to compile C++ code
+build --cxxopt="-std=c++17"
+
+# https://github.com/bazelbuild/bazel/issues/16413#issuecomment-1270603343
+# https://stackoverflow.com/a/65694450/4890253
+# build --linkopt="-Wl,-L/usr/local/lib,-fuse-ld=bfd"
+# build --linkopt="-Wl,-no_fixup_chains"
+
+# Don’t show progress message during CI builds
+build:ci --noshow_progress
+
+# Tell abseil this flag is OK since it’s supposed to be parsed by GoogleTest.
+# See src/common/main.cc for more detailed explanations.
+test  --test_arg=--undefok=gtest_color
+test  --test_arg=--gtest_color=yes
+
+# Remote caching
+# https://app.buildbuddy.io/docs/setup/
+build:ci --bes_results_url=https://app.buildbuddy.io/invocation/
+build:ci --bes_backend=grpcs://remote.buildbuddy.io
+build:ci --remote_cache=grpcs://remote.buildbuddy.io
+build:ci --experimental_remote_cache_compression
+build:ci --remote_timeout=3600
