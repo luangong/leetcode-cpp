@@ -1,0 +1,12 @@
+{
+  "recommendations": [
+    "bazelbuild.vscode-bazel",
+    "bierner.github-markdown-preview",
+    "eamodio.gitlens",
+    "editorconfig.editorconfig",
+    "llvm-vs-code-extensions.vscode-clangd",
+    "ms-vscode.cmake-tools",
+    "redhat.vscode-yaml",
+    "vscode-icons-team.vscode-icons",
+  ]
+}

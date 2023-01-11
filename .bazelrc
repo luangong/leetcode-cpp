@@ -1,0 +1,13 @@
+# LeetCode uses the C++17 standard to compile C++ code
+build --cxxopt="-std=c++17"
+
+# https://github.com/bazelbuild/bazel/issues/16413#issuecomment-1270603343
+build --linkopt="-Wl,-no_fixup_chains"
+
+# Show test output.  May be disabled in the future if there are too many test cases.
+test  --test_output=all
+
+# Tell abseil this flag is OK since it's supposed to be parsed by GoogleTest.
+# See src/common/main.cc for more detailed explanations.
+test  --test_arg=--undefok=gtest_color
+test  --test_arg=--gtest_color=yes
