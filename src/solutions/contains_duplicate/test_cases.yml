@@ -1,0 +1,6 @@
+- { nums: [0],          expected: false }
+- { nums: [0, 0],       expected: true  }
+- { nums: [0, 1],       expected: false }
+- { nums: [1, 1],       expected: true  }
+- { nums: [1, 2, 3],    expected: false }
+- { nums: [1, 3, 3, 7], expected: true  }

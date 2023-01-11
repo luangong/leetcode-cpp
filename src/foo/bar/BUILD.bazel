@@ -1,0 +1,31 @@
+cc_binary(
+    name = "hello",
+    srcs = ["hello.cc"],
+    data = [":data.txt"],
+    deps = [
+        "//src:util",
+        "@googletest//:gtest",
+        "@abseil//absl/flags:flag",
+        "@abseil//absl/flags:parse",
+        "@yaml_cpp//:yaml-cpp",
+    ],
+    args = [
+        "--path=$(location :data.txt)",
+    ],
+)
+
+cc_library(
+    name = "calculator",
+    srcs = ["calculator.cc"],
+    hdrs = ["calculator.h"],
+)
+
+cc_test(
+    name = "calculator_test",
+    size = "small",
+    srcs = ["calculator_test.cc"],
+    deps = [
+        ":calculator",
+        "@googletest//:gtest_main",
+    ],
+)

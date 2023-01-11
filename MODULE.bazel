@@ -1,0 +1,19 @@
+module(
+    name = "leetcode_cpp",
+    version = "0.1.0",
+)
+
+# https://registry.bazel.build/modules/googletest
+bazel_dep(
+    name = "googletest",
+    # There is no v1.12.1 in the BCR yet
+    version = "1.11.0",
+)
+
+# https://registry.bazel.build/modules/abseil-cpp
+# Note that there is no 20220623.1 in the BCR yet so we use 20211102.0 instead
+bazel_dep(
+    name = "abseil-cpp",
+    version = "20211102.0",
+    repo_name = "abseil",
+)

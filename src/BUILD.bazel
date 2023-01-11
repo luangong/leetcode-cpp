@@ -1,0 +1,22 @@
+package(default_visibility = ["//visibility:public"])
+
+cc_library(
+    name = "util",
+    srcs = ["common/util.cc"],
+    hdrs = ["common/util.h"],
+    includes = ["."],
+    deps = [
+        "@abseil//absl/flags:flag",
+        "@yaml_cpp//:yaml-cpp",
+    ],
+)
+
+cc_library(
+    name = "main",
+    srcs = ["common/main.cc"],
+    deps = [
+        "@googletest//:gtest",
+        "@abseil//absl/flags:flag",
+        "@abseil//absl/flags:parse",
+    ],
+)
