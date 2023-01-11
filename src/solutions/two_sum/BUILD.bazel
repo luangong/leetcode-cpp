@@ -1,0 +1,17 @@
+cc_test(
+    name = "test",
+    size = "small",
+    srcs = ["solution.cc"],
+    deps = [
+        "//src:util",
+        "//src:main",
+        "@googletest//:gtest",
+        "@abseil//absl/flags:flag",
+        "@abseil//absl/flags:parse",
+        "@yaml_cpp//:yaml-cpp",
+    ],
+    data = [":test_cases.yml"],
+    args = [
+        "--test_cases=$(location :test_cases.yml)",
+    ],
+)
