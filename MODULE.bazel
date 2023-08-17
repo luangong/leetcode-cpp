@@ -4,7 +4,7 @@ module(name = "leetcode_cpp", version = "0.1.0")
 bazel_dep(name = "googletest", version = "1.12.1")
 
 # https://registry.bazel.build/modules/abseil-cpp
-bazel_dep(name = "abseil-cpp", version = "20230125.1.0", repo_name = "abseil")
+bazel_dep(name = "abseil-cpp", version = "20230802.0", repo_name = "abseil")
 
 # YAML parser and emitter in C++.  It doesn’t support bzlmod yet.
 # https://github.com/jbeder/yaml-cpp
