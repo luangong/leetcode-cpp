@@ -1,0 +1,18 @@
+module(name = "leetcode_cpp", version = "0.1.0")
+
+# https://registry.bazel.build/modules/googletest
+bazel_dep(name = "googletest", version = "1.14.0")
+
+# https://registry.bazel.build/modules/abseil-cpp
+bazel_dep(name = "abseil-cpp", version = "20230802.0", repo_name = "abseil")
+
+# YAML parser and emitter in C++.  It doesn’t support bzlmod yet.
+# https://github.com/jbeder/yaml-cpp
+#
+# bazel_dep(name = "yaml_cpp", version = "")
+
+# Hedron's Compile Commands Extractor for Bazel
+# bzlmod not supported yet
+# https://github.com/hedronvision/bazel-compile-commands-extractor
+#
+# bazel_dep(name = "hedron_compile_commands", version = "")
